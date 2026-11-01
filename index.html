@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#164b3a">
+  <meta name="description" content="Explore an Oopbuy spreadsheet guide for shoes, clothing and accessories. Browse CAFANS categories and learn how to compare sizing, photos and total costs.">
+  <title>Oopbuy Spreadsheet | A Better Way to Organize Fashion Finds</title>
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Oopbuy Spreadsheet — The Fashion Field Guide">
+  <meta property="og:description" content="Browse fashion categories, build a useful shortlist and compare product details before you buy.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Oopbuy Spreadsheet — The Fashion Field Guide">
+  <meta name="twitter:description" content="A practical guide to organizing shoes, clothing and accessories with CAFANS category links.">
+  <!-- index.html: Add a self-referencing canonical URL after choosing this page's final deployment domain. -->
+  <style>
+    :root{
+      --paper:#f5f2e9;--white:#fffdf7;--ink:#192b25;--muted:#526259;
+      --green:#164b3a;--lime:#d9ed9b;--line:#d4d9cd;--orange:#c96338;
+      --radius:18px;--max:1200px
+    }
+    *{box-sizing:border-box}
+    html{color-scheme:light}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.65}
+    a{color:inherit;text-underline-offset:4px}
+    a:focus-visible,summary:focus-visible{outline:3px solid var(--orange);outline-offset:5px}
+    svg{display:block;width:100%;height:auto}
+    .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+    .topline{background:var(--green);color:#fff;font-size:12px;letter-spacing:.07em;text-align:center;padding:9px 20px}
+    header{border-bottom:1px solid var(--line)}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:88px}
+    .logo{text-decoration:none;font-weight:900;font-size:25px;letter-spacing:-1.2px}
+    .logo span{color:var(--green)}
+    .header-note{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.13em}
+    .header-link{font-size:13px;font-weight:700}
+    .category-section{padding:26px 0 30px;border-bottom:1px solid var(--line)}
+    .section-label{display:flex;justify-content:space-between;gap:20px;align-items:center;margin-bottom:13px}
+    .eyebrow{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.17em;margin:0;color:var(--green)}
+    .section-label p:last-child{font-size:12px;color:var(--muted);margin:0}
+    .categories{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+    .category{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:54px;padding:12px;background:var(--white);border:1px solid var(--line);border-radius:9px;text-decoration:none;font-size:13px;font-weight:700;transition:background .15s,border-color .15s}
+    .category:hover{background:var(--lime);border-color:var(--green)}
+    .category b{font-weight:400;color:var(--green)}
+    .hero{display:grid;grid-template-columns:1.12fr .88fr;gap:60px;align-items:center;padding:66px 0 58px}
+    h1,h2,h3,p{margin-top:0}
+    h1,h2{font-family:Georgia,"Times New Roman",serif;font-weight:400;line-height:1.05;letter-spacing:-.045em}
+    h1{font-size:clamp(48px,6.4vw,80px);margin:18px 0 24px}
+    h1 em{color:var(--green)}
+    .lead{font-size:17px;color:var(--muted);max-width:590px}
+    .button{display:inline-flex;align-items:center;justify-content:center;gap:24px;padding:14px 23px;background:var(--green);color:#fff;border:1px solid var(--green);border-radius:999px;font-size:14px;font-weight:700;text-decoration:none}
+    .button:hover{background:#0c3628}
+    .button.light{background:var(--lime);color:var(--ink);border-color:var(--lime)}
+    .hero-foot{font-size:12px;color:var(--muted);margin:17px 0 0}
+    .field-card{background:var(--green);color:#fff;border-radius:var(--radius);padding:28px;transform:rotate(2deg);box-shadow:10px 13px 0 #dce1cf}
+    .field-card-top{display:flex;justify-content:space-between;gap:15px;font-size:10px;text-transform:uppercase;letter-spacing:.15em;padding-bottom:19px;border-bottom:1px solid #ffffff35}
+    .field-card h2{font-size:39px;letter-spacing:-.04em;margin:22px 0}
+    .sheet-row{display:grid;grid-template-columns:30px 1fr auto;gap:8px;padding:15px 0;border-top:1px solid #ffffff28;font-size:13px;align-items:center}
+    .sheet-row span:first-child{color:var(--lime);font-size:11px}
+    .sheet-row small{color:#d2e0d8;font-size:10px}
+    .card-stamp{display:inline-block;margin-top:24px;background:var(--lime);color:var(--ink);font-size:10px;font-weight:800;letter-spacing:.1em;padding:6px 10px;border-radius:4px}
+    .answer{display:grid;grid-template-columns:170px 1fr;gap:28px;padding:28px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .answer h2{font-family:Arial,Helvetica,sans-serif;letter-spacing:0;font-size:14px;line-height:1.6;margin:0}
+    .answer p{margin:0;max-width:900px;color:var(--muted);font-size:15px}
+    .block{padding:64px 0}
+    .block-heading{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:26px}
+    .block-heading h2{font-size:clamp(34px,4vw,49px);margin:10px 0 0}
+    .block-heading>p{font-size:14px;color:var(--muted);max-width:350px;margin:0}
+    .editorial-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+    .product-art{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--white);margin:0}
+    .art{aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .art svg{width:100%}
+    .art-one{background:#e3e8db}
+    .art-two{background:#e9ded0}
+    .art-three{background:#e1e5d4}
+    .art-four{background:#f0d8c4}
+    figcaption{padding:20px}
+    .brand{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.16em;color:var(--green)}
+    figcaption h3{font-size:18px;line-height:1.3;margin:7px 0 9px}
+    figcaption p{font-size:12px;color:var(--muted);margin-bottom:14px}
+    figcaption a{font-size:12px;font-weight:700}
+    .art-note{font-size:11px;color:var(--muted);margin:16px 0 0}
+    .guide{background:#e8ecdf;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px}
+    .step{padding-top:20px;border-top:2px solid var(--green)}
+    .step-number{font-family:Georgia,serif;font-size:31px;color:var(--green)}
+    .step h3{font-size:20px;margin:12px 0 10px}
+    .step p{font-size:14px;color:var(--muted);margin:0}
+    .comparison{display:grid;grid-template-columns:.75fr 1.25fr;gap:55px;align-items:start}
+    .comparison h2{font-size:44px;margin:13px 0 20px}
+    .comparison p{color:var(--muted);font-size:14px}
+    .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:13px;background:var(--white)}
+    table{width:100%;border-collapse:collapse;text-align:left;font-size:13px;min-width:440px}
+    th,td{padding:16px 18px;vertical-align:top;border-bottom:1px solid var(--line)}
+    th{background:#e8ecdf;font-size:11px;text-transform:uppercase;letter-spacing:.07em}
+    tbody tr:last-child td{border-bottom:0}
+    td:first-child{font-weight:700;width:31%}
+    td:last-child{color:var(--muted)}
+    .topics{padding-top:0}
+    .topic-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+    .topic-box{padding:25px;border:1px solid var(--line);border-radius:var(--radius);background:var(--white)}
+    .topic-box h3{font-size:18px;margin-bottom:10px}
+    .topic-box p{font-size:13px;color:var(--muted);margin-bottom:0}
+    .topic-box ul{padding-left:17px;margin:16px 0 0}
+    .topic-box li{font-size:12px;color:var(--muted);margin:6px 0}
+    .faq-layout{display:grid;grid-template-columns:.7fr 1.3fr;gap:55px}
+    .faq-layout h2{font-size:46px;margin:12px 0 20px}
+    .faq-intro{font-size:14px;color:var(--muted)}
+    details{border-bottom:1px solid var(--line);padding:19px 0}
+    details:first-child{border-top:1px solid var(--line)}
+    summary{cursor:pointer;font-size:15px;font-weight:700;line-height:1.5;padding-right:10px}
+    details p{font-size:14px;color:var(--muted);margin:14px 0 0}
+    .cta{background:var(--green);color:#fff;border-radius:22px;padding:42px;display:flex;justify-content:space-between;gap:30px;align-items:center;margin-bottom:55px}
+    .cta h2{font-size:41px;max-width:650px;margin:0 0 12px}
+    .cta p{font-size:14px;color:#d4e2d9;margin:0;max-width:650px}
+    .cta .button{flex-shrink:0}
+    footer{padding:29px 0;border-top:1px solid var(--line)}
+    .footer-inner{display:flex;justify-content:space-between;gap:35px}
+    footer p{font-size:11px;color:var(--muted);margin:0;max-width:780px}
+    footer a{font-size:12px;font-weight:700;white-space:nowrap}
+    @media(min-width:1000px){.lower{content-visibility:auto;contain-intrinsic-size:auto 700px}}
+    @media(max-width:900px){
+      .categories{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .hero{gap:35px}
+      .editorial-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .comparison,.faq-layout{grid-template-columns:1fr;gap:25px}
+      .topic-grid{grid-template-columns:1fr}
+      .cta{align-items:start;flex-direction:column}
+      .header-note{display:none}
+    }
+    @media(max-width:600px){
+      .wrap{width:calc(100% - 28px)}
+      .header-inner{min-height:72px}
+      .logo{font-size:22px}
+      .header-link{font-size:12px}
+      .categories{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .category{font-size:12px;min-height:51px}
+      .section-label p:last-child{display:none}
+      .hero{grid-template-columns:1fr;padding:38px 0 36px;gap:30px}
+      h1{font-size:52px}
+      .lead{font-size:15px}
+      .field-card{transform:none;padding:23px;box-shadow:5px 6px 0 #dce1cf}
+      .field-card h2{font-size:32px}
+      .answer{grid-template-columns:1fr;gap:10px;padding:24px 0}
+      .block{padding:42px 0}
+      .block-heading{display:block}
+      .block-heading>p{margin-top:15px}
+      .editorial-grid{gap:10px}
+      figcaption{padding:14px}
+      figcaption h3{font-size:16px}
+      .steps{grid-template-columns:1fr;gap:25px}
+      .comparison h2,.faq-layout h2{font-size:36px}
+      .topics{padding-top:0}
+      .cta{padding:28px;margin-bottom:36px}
+      .cta h2{font-size:33px}
+      .footer-inner{flex-direction:column;gap:16px}
+    }
+    @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"WebPage",
+        "name":"Oopbuy Spreadsheet — The Fashion Field Guide",
+        "description":"An independent guide to organizing fashion finds, comparing listing details and browsing CAFANS categories.",
+        "inLanguage":"en",
+        "about":{"@type":"Thing","name":"Oopbuy spreadsheet"},
+        "mainEntity":{
+          "@type":"ItemList",
+          "name":"CAFANS fashion categories",
+          "itemListElement":[
+            {"@type":"ListItem","position":1,"name":"Shoes","url":"https://cafans.com/category-911-Shoes.html"},
+            {"@type":"ListItem","position":2,"name":"Hoodies/Sweaters","url":"https://cafans.com/category-912-Hoodies%2FSweaters.html"},
+            {"@type":"ListItem","position":3,"name":"T-Shirts","url":"https://cafans.com/category-913-T-Shirts.html"},
+            {"@type":"ListItem","position":4,"name":"Jackets","url":"https://cafans.com/category-914-Jackets.html"},
+            {"@type":"ListItem","position":5,"name":"Pants/Shorts","url":"https://cafans.com/category-915-Pants%2FShorts.html"},
+            {"@type":"ListItem","position":6,"name":"Headwear","url":"https://cafans.com/category-916-Headwear.html"},
+            {"@type":"ListItem","position":7,"name":"Sets","url":"https://cafans.com/category-917-Sets.html"},
+            {"@type":"ListItem","position":8,"name":"Underwear/underpants","url":"https://cafans.com/category-918-underwear%2Funderpants.html"},
+            {"@type":"ListItem","position":9,"name":"Jersey","url":"https://cafans.com/category-919-Jersey.html"},
+            {"@type":"ListItem","position":10,"name":"Accessories","url":"https://cafans.com/category-920-Accessories.html"}
+          ]
+        }
+      },
+      {
+        "@type":"FAQPage",
+        "inLanguage":"en",
+        "mainEntity":[
+          {
+            "@type":"Question",
+            "name":"What is an Oopbuy spreadsheet?",
+            "acceptedAnswer":{"@type":"Answer","text":"An Oopbuy spreadsheet is a table used to organize product links and comparison notes for shopping research. Useful columns include category, seller, listed price, size measurements, photo references and estimated total cost."}
+          },
+          {
+            "@type":"Question",
+            "name":"Is this an official Oopbuy website?",
+            "acceptedAnswer":{"@type":"Answer","text":"No. This is an independent editorial guide with links to CAFANS. It does not represent Oopbuy or the fashion brands mentioned on this page."}
+          },
+          {
+            "@type":"Question",
+            "name":"Does this page provide a downloadable spreadsheet?",
+            "acceptedAnswer":{"@type":"Answer","text":"No. This page provides category navigation and a practical comparison guide. It does not host a downloadable spreadsheet, live stock feed or ordering integration."}
+          },
+          {
+            "@type":"Question",
+            "name":"What should I check before saving a product?",
+            "acceptedAnswer":{"@type":"Answer","text":"Check the exact variant, material description, measurements, seller information, available photos and return conditions. Record anything missing as unverified."}
+          },
+          {
+            "@type":"Question",
+            "name":"Can a spreadsheet verify authenticity or quality?",
+            "acceptedAnswer":{"@type":"Answer","text":"No. A spreadsheet organizes information; it does not authenticate products or guarantee quality. Brand names, listing photos and price alone do not establish authenticity."}
+          },
+          {
+            "@type":"Question",
+            "name":"How should I compare the total cost?",
+            "acceptedAnswer":{"@type":"Answer","text":"Separate the item price from domestic delivery, service fees, international shipping and any applicable taxes or duties. Treat the result as an estimate until the relevant charges are confirmed."}
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="topline">THE FASHION FIELD GUIDE · BROWSE WITH A PLAN</div>
+
+  <header>
+    <div class="wrap header-inner">
+      <a class="logo" href="https://www.cafans.com" aria-label="Visit www.cafans.com">www.<span>cafans</span>.com</a>
+      <span class="header-note">Independent shopping notes / Volume 01</span>
+      <a class="header-link" href="https://www.cafans.com">Explore CAFANS ↗</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="category-section" aria-labelledby="category-title">
+      <div class="wrap">
+        <div class="section-label">
+          <h2 class="eyebrow" id="category-title">Start with your category</h2>
+          <p>Direct links to the CAFANS catalog</p>
+        </div>
+        <nav class="categories" aria-label="Shop fashion categories">
+          <a class="category" href="https://cafans.com/category-911-Shoes.html">Shoes <b aria-hidden="true">↗</b></a>
+          <a class="category" href="https://cafans.com/category-912-Hoodies%2FSweaters.html">Hoodies/Sweaters <b aria-hidden="true">↗</b></a>
+          <a class="category" href="https://cafans.com/category-913-T-Shirts.html">T-Shirts <b aria-hidden="true">↗</b></a>
+          <a class="category" href="https://cafans.com/category-914-Jackets.html">Jackets <b aria-hidden="true">↗</b></a>
+          <a class="category" href="https://cafans.com/category-915-Pants%2FShorts.html">Pants/Shorts <b aria-hidden="true">↗</b></a>
+          <a class="category" href="https://cafans.com/category-916-Headwear.html">Headwear <b aria-hidden="true">↗</b></a>
+          <a class="category" href="https://cafans.com/category-917-Sets.html">Sets <b aria-hidden="true">↗</b></a>
+          <a class="category" href="https://cafans.com/category-918-underwear%2Funderpants.html">Underwear/underpants <b aria-hidden="true">↗</b></a>
+          <a class="category" href="https://cafans.com/category-919-Jersey.html">Jersey <b aria-hidden="true">↗</b></a>
+          <a class="category" href="https://cafans.com/category-920-Accessories.html">Accessories <b aria-hidden="true">↗</b></a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="wrap hero" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">Less scrolling. More considered choices.</p>
+        <h1 id="page-title">Oopbuy<br>spreadsheet.<br><em>Find your edit.</em></h1>
+        <p class="lead">Bring a little structure to your next fashion search. Explore shoes, clothing and accessories, then organize the details that help you decide: fit, materials, photos and total cost.</p>
+        <a class="button" href="https://www.cafans.com">Discover fashion finds <span aria-hidden="true">↗</span></a>
+        <p class="hero-foot">An independent guide with CAFANS category links.</p>
+      </div>
+      <aside class="field-card" aria-label="Example shopping shortlist">
+        <div class="field-card-top"><span>The shortlist</span><span>Research / Compare / Decide</span></div>
+        <h2>Good finds deserve<br>better notes.</h2>
+        <div class="sheet-row"><span>01</span><strong>Everyday sneakers</strong><small>CHECK FIT</small></div>
+        <div class="sheet-row"><span>02</span><strong>Layering essentials</strong><small>CHECK FABRIC</small></div>
+        <div class="sheet-row"><span>03</span><strong>Finishing touches</strong><small>CHECK DETAILS</small></div>
+        <span class="card-stamp">ILLUSTRATIVE SHORTLIST</span>
+      </aside>
+    </section>
+
+    <section class="wrap answer" aria-labelledby="quick-answer">
+      <h2 id="quick-answer">What is an Oopbuy spreadsheet?</h2>
+      <p>An <strong>Oopbuy spreadsheet</strong> is a table used to organize product links and comparison notes for shopping research. Useful columns include category, seller, listed price, size measurements, photo references and estimated total cost. This page explains that workflow and links to CAFANS categories; it does not host a downloadable sheet or verify product listings.</p>
+    </section>
+
+    <section class="wrap block" aria-labelledby="style-title">
+      <div class="block-heading">
+        <div>
+          <p class="eyebrow">The visual notebook</p>
+          <h2 id="style-title">Four directions. Your own style.</h2>
+        </div>
+        <p>Use a visual starting point, then compare the actual listing details before adding anything to your shortlist.</p>
+      </div>
+
+      <div class="editorial-grid">
+        <figure class="product-art">
+          <div class="art art-one">
+            <svg viewBox="0 0 320 320" role="img" aria-labelledby="nike-art-title">
+              <title id="nike-art-title">Original sneaker illustration for the Nike style research section</title>
+              <circle cx="238" cy="75" r="72" fill="#c9d4bd"/>
+              <path d="M0 246H320M0 270H320" stroke="#c6cfbc"/>
+              <ellipse cx="161" cy="248" rx="119" ry="15" fill="#b5c2a8" opacity=".6"/>
+              <g transform="rotate(-12 160 185)">
+                <path d="M48 207L65 139Q69 127 80 137L112 162L151 154L178 177L235 191Q265 196 271 214L270 232L49 232Q36 224 48 207Z" fill="#fffdf6" stroke="#304a3c" stroke-width="3"/>
+                <path d="M48 216Q150 233 271 214L270 232L49 232Z" fill="#c8d4c2" stroke="#304a3c" stroke-width="3"/>
+                <path d="M67 153L94 183L119 171M160 169L137 185M174 180L150 195M187 189L165 205" stroke="#304a3c" stroke-width="4" fill="none" stroke-linecap="round"/>
+                <path d="M83 196Q136 213 231 203" stroke="#94aa85" stroke-width="9" fill="none"/>
+                <path d="M58 239H252" stroke="#304a3c" stroke-width="3"/>
+              </g>
+              <text x="24" y="39" font-family="Arial,sans-serif" font-size="11" letter-spacing="3" fill="#304a3c">STUDY 01 / FOOTWEAR</text>
+            </svg>
+          </div>
+          <figcaption>
+            <span class="brand">Nike · style research</span>
+            <h3>Start from the ground up.</h3>
+            <p>Compare sneaker shape, upper materials and size measurements.</p>
+            <a href="https://cafans.com/category-911-Shoes.html">Explore shoes ↗</a>
+          </figcaption>
+        </figure>
+
+        <figure class="product-art">
+          <div class="art art-two">
+            <svg viewBox="0 0 320 320" role="img" aria-labelledby="lv-art-title">
+              <title id="lv-art-title">Original jacket illustration for the Louis Vuitton style research section</title>
+              <circle cx="72" cy="90" r="73" fill="#d9c9b7"/>
+              <ellipse cx="161" cy="271" rx="90" ry="12" fill="#c2ad96" opacity=".5"/>
+              <path d="M118 91L85 108L49 193L82 210L109 160L104 263H216L211 160L238 210L271 193L235 108L202 91L181 105H139Z" fill="#82624b" stroke="#463b30" stroke-width="3"/>
+              <path d="M139 105L160 133L181 105M160 133V262" fill="none" stroke="#e2c9a8" stroke-width="3"/>
+              <path d="M118 91L133 79H187L202 91L181 105H139Z" fill="#c5a986" stroke="#463b30" stroke-width="3"/>
+              <path d="M116 195H142V221H116ZM178 195H204V221H178Z" fill="#6c503d" stroke="#dbc09a" stroke-width="2"/>
+              <circle cx="168" cy="160" r="2.5" fill="#ead6b7"/>
+              <circle cx="168" cy="185" r="2.5" fill="#ead6b7"/>
+              <circle cx="168" cy="210" r="2.5" fill="#ead6b7"/>
+              <text x="24" y="39" font-family="Arial,sans-serif" font-size="11" letter-spacing="3" fill="#594936">STUDY 02 / LAYERS</text>
+            </svg>
+          </div>
+          <figcaption>
+            <span class="brand">Louis Vuitton · style research</span>
+            <h3>Build around a layer.</h3>
+            <p>Record fabric, shoulder width, sleeve length and closure details.</p>
+            <a href="https://cafans.com/category-914-Jackets.html">Explore jackets ↗</a>
+          </figcaption>
+        </figure>
+
+        <figure class="product-art">
+          <div class="art art-three">
+            <svg viewBox="0 0 320 320" role="img" aria-labelledby="gucci-art-title">
+              <title id="gucci-art-title">Original cap illustration for the Gucci style research section</title>
+              <circle cx="244" cy="96" r="78" fill="#ccd4ba"/>
+              <ellipse cx="164" cy="250" rx="118" ry="14" fill="#b5bea3" opacity=".5"/>
+              <path d="M66 203Q63 102 148 101Q226 101 232 202Z" fill="#60745b" stroke="#304b38" stroke-width="3"/>
+              <path d="M148 103Q119 149 125 202M148 103Q182 146 185 202" stroke="#91a083" stroke-width="3" fill="none"/>
+              <path d="M68 201Q162 184 233 201L281 224Q293 236 274 242Q204 259 126 219L68 217Z" fill="#354f3b" stroke="#243a2b" stroke-width="3"/>
+              <path d="M130 155H172V184H130Z" fill="#e7e2cc" stroke="#304b38" stroke-width="2"/>
+              <path d="M143 162V177M151 162V177M159 162V177" stroke="#a05d43" stroke-width="3"/>
+              <circle cx="148" cy="100" r="6" fill="#354f3b"/>
+              <text x="24" y="39" font-family="Arial,sans-serif" font-size="11" letter-spacing="3" fill="#304b38">STUDY 03 / HEADWEAR</text>
+            </svg>
+          </div>
+          <figcaption>
+            <span class="brand">Gucci · style research</span>
+            <h3>A small finishing detail.</h3>
+            <p>Check cap circumference, adjustment options and material notes.</p>
+            <a href="https://cafans.com/category-916-Headwear.html">Explore headwear ↗</a>
+          </figcaption>
+        </figure>
+
+        <figure class="product-art">
+          <div class="art art-four">
+            <svg viewBox="0 0 320 320" role="img" aria-labelledby="hermes-art-title">
+              <title id="hermes-art-title">Original bracelet illustration for the Hermès style research section</title>
+              <circle cx="77" cy="89" r="76" fill="#e5bfa1"/>
+              <ellipse cx="160" cy="259" rx="94" ry="14" fill="#c99573" opacity=".4"/>
+              <ellipse cx="161" cy="180" rx="86" ry="65" fill="none" stroke="#8c482c" stroke-width="29"/>
+              <path d="M85 151Q160 96 237 153" fill="none" stroke="#cd7c46" stroke-width="23"/>
+              <path d="M89 153Q160 106 232 153" fill="none" stroke="#e4aa71" stroke-width="3"/>
+              <rect x="126" y="199" width="71" height="37" rx="7" fill="#d6ad5b" stroke="#725b2f" stroke-width="3" transform="rotate(-5 161 217)"/>
+              <rect x="143" y="207" width="36" height="20" rx="3" fill="#865138" stroke="#725b2f" stroke-width="2" transform="rotate(-5 161 217)"/>
+              <path d="M143 217H179" stroke="#d6ad5b" stroke-width="5"/>
+              <text x="24" y="39" font-family="Arial,sans-serif" font-size="11" letter-spacing="3" fill="#74462f">STUDY 04 / JEWELRY</text>
+            </svg>
+          </div>
+          <figcaption>
+            <span class="brand">Hermès · style research</span>
+            <h3>Finish with texture.</h3>
+            <p>Compare bracelet dimensions, fastening type and material claims.</p>
+            <a href="https://cafans.com/category-920-Accessories.html">Explore accessories ↗</a>
+          </figcaption>
+        </figure>
+      </div>
+      <p class="art-note">Original editorial illustrations, not product photographs. Brand references describe research interests; they do not imply affiliation, available inventory or verified authenticity.</p>
+    </section>
+
+    <section class="guide lower">
+      <div class="wrap block">
+        <div class="block-heading">
+          <div>
+            <p class="eyebrow">A practical Oopbuy shopping guide</p>
+            <h2>Browse. Compare. Keep the useful details.</h2>
+          </div>
+          <p>A short, consistent research routine makes your product list easier to revisit.</p>
+        </div>
+        <div class="steps">
+          <article class="step">
+            <span class="step-number">01 /</span>
+            <h3>Choose one category</h3>
+            <p>Begin with the item you need. For Oopbuy clothing finds, separate T-shirts, outerwear and matching sets so that you compare products with similar purposes.</p>
+          </article>
+          <article class="step">
+            <span class="step-number">02 /</span>
+            <h3>Record the evidence</h3>
+            <p>Save the product URL, selected variant, seller information and measurements. For Oopbuy QC photos, note the source and whether the pictures show the same variant you are considering.</p>
+          </article>
+          <article class="step">
+            <span class="step-number">03 /</span>
+            <h3>Compare the full picture</h3>
+            <p>Review fit, materials, listing clarity and estimated delivered cost. An Oopbuy product list is most useful when missing information stays clearly marked as unverified.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap block comparison lower" aria-labelledby="compare-title">
+      <div>
+        <p class="eyebrow">The comparison checklist</p>
+        <h2 id="compare-title">A price is only<br>one column.</h2>
+        <p>Whether you are researching Oopbuy shoe finds or a seasonal wardrobe, consistent notes help you compare like with like.</p>
+        <p>Use the fields opposite in your own spreadsheet. Check details again before paying because listings, charges and availability can change.</p>
+        <a class="header-link" href="https://www.cafans.com">Start browsing on CAFANS ↗</a>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <caption style="text-align:left;padding:16px 18px;font-weight:700">Suggested fields for your own shopping spreadsheet</caption>
+          <thead><tr><th scope="col">Field</th><th scope="col">What to record</th></tr></thead>
+          <tbody>
+            <tr><td>Product &amp; variant</td><td>Exact URL, color, size, seller and date checked.</td></tr>
+            <tr><td>Fit &amp; measurements</td><td>Centimeter measurements alongside the listing’s size label.</td></tr>
+            <tr><td>Materials</td><td>Listed composition; distinguish seller claims from verified information.</td></tr>
+            <tr><td>Photos &amp; details</td><td>Photo source, matching variant, visible construction and unresolved questions.</td></tr>
+            <tr><td>Estimated total</td><td>Item price, domestic delivery, service fees, international shipping and applicable taxes or duties.</td></tr>
+            <tr><td>Decision notes</td><td>Return conditions, missing evidence and your reason for keeping or removing the item.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="wrap block topics lower" aria-labelledby="topics-title">
+      <div class="block-heading">
+        <div>
+          <p class="eyebrow">Research paths</p>
+          <h2 id="topics-title">Make your next search more specific.</h2>
+        </div>
+        <p>These related search ideas are grouped by intent. They are suggestions, not measured search-volume rankings or verified product collections.</p>
+      </div>
+      <div class="topic-grid">
+        <article class="topic-box">
+          <h3>Find your category</h3>
+          <p>Start with the type of product instead of an unrestricted shopping search.</p>
+          <ul>
+            <li>oopbuy sneaker spreadsheet</li>
+            <li>oopbuy shoes spreadsheet</li>
+            <li>oopbuy hoodie finds</li>
+            <li>oopbuy t shirt finds</li>
+            <li>oopbuy jacket spreadsheet</li>
+            <li>oopbuy pants finds</li>
+            <li>oopbuy shorts spreadsheet</li>
+            <li>oopbuy headwear finds</li>
+            <li>oopbuy matching sets</li>
+            <li>oopbuy accessories spreadsheet</li>
+          </ul>
+        </article>
+        <article class="topic-box">
+          <h3>Check the product details</h3>
+          <p>Use specific questions to identify information missing from a listing.</p>
+          <ul>
+            <li>oopbuy size chart guide</li>
+            <li>oopbuy clothing measurements</li>
+            <li>oopbuy shoe size comparison</li>
+            <li>oopbuy product photo checklist</li>
+            <li>oopbuy qc photo guide</li>
+            <li>oopbuy material comparison</li>
+            <li>oopbuy seller research</li>
+            <li>oopbuy product variant notes</li>
+            <li>oopbuy jersey sizing</li>
+            <li>oopbuy jewelry dimensions</li>
+          </ul>
+        </article>
+        <article class="topic-box">
+          <h3>Organize the decision</h3>
+          <p>Build a shortlist that keeps costs and uncertainty visible.</p>
+          <ul>
+            <li>oopbuy spreadsheet beginner guide</li>
+            <li>oopbuy shopping checklist</li>
+            <li>oopbuy product link organizer</li>
+            <li>oopbuy wardrobe planning</li>
+            <li>oopbuy price comparison sheet</li>
+            <li>oopbuy shipping cost planning</li>
+            <li>oopbuy total cost worksheet</li>
+            <li>oopbuy fashion shortlist</li>
+            <li>oopbuy shopping research notes</li>
+            <li>oopbuy spreadsheet columns</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap block faq-layout lower" aria-labelledby="faq-title">
+      <div>
+        <p class="eyebrow">Straight answers</p>
+        <h2 id="faq-title">Before you<br>build your list.</h2>
+        <p class="faq-intro">A few useful distinctions for anyone searching for an Oopbuy spreadsheet, product links or comparison advice.</p>
+      </div>
+      <div>
+        <details open>
+          <summary>What is an Oopbuy spreadsheet?</summary>
+          <p>An Oopbuy spreadsheet is a table used to organize product links and comparison notes for shopping research. Useful columns include category, seller, listed price, size measurements, photo references and estimated total cost.</p>
+        </details>
+        <details>
+          <summary>Is this an official Oopbuy website?</summary>
+          <p>No. This is an independent editorial guide with links to CAFANS. It does not represent Oopbuy or the fashion brands mentioned on this page.</p>
+        </details>
+        <details>
+          <summary>Does this page provide a downloadable spreadsheet?</summary>
+          <p>No. This page provides category navigation and a practical comparison guide. It does not host a downloadable spreadsheet, live stock feed or ordering integration.</p>
+        </details>
+        <details>
+          <summary>What should I check before saving a product?</summary>
+          <p>Check the exact variant, material description, measurements, seller information, available photos and return conditions. Record anything missing as unverified.</p>
+        </details>
+        <details>
+          <summary>Can a spreadsheet verify authenticity or quality?</summary>
+          <p>No. A spreadsheet organizes information; it does not authenticate products or guarantee quality. Brand names, listing photos and price alone do not establish authenticity.</p>
+        </details>
+        <details>
+          <summary>How should I compare the total cost?</summary>
+          <p>Separate the item price from domestic delivery, service fees, international shipping and any applicable taxes or duties. Treat the result as an estimate until the relevant charges are confirmed.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="wrap" aria-labelledby="cta-title">
+      <div class="cta">
+        <div>
+          <h2 id="cta-title">Your next find starts with a category.</h2>
+          <p>Explore CAFANS, keep a focused shortlist and compare the details that matter to you.</p>
+        </div>
+        <a class="button light" href="https://www.cafans.com">Browse CAFANS <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <p>Independent fashion research guide. Oopbuy, Nike, Louis Vuitton, Gucci and Hermès are trademarks of their respective owners. No affiliation or endorsement is implied. Illustrations are editorial artwork; product availability, authenticity, prices and delivery conditions must be checked separately.</p>
+      <a href="https://www.cafans.com">www.cafans.com ↗</a>
+    </div>
+  </footer>
+</body>
+</html>
